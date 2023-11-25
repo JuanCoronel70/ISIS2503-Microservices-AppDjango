@@ -10,9 +10,9 @@ import json
 
 def check_variable(data):
     r = requests.get(settings.PATH_VAR, headers={"Accept":"application/json"})
-    variables = r.json()
-    for variable in variables:
-        if data["variable"] == variable["id"]:
+    places = r.json()
+    for place in places:
+        if data["place"] == place["name"]:
             return True
     return False
 
